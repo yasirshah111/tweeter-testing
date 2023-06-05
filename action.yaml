@@ -1,6 +1,6 @@
 name: Tweeter Action
 author: DevOps for Go
-description: Simple action to send a tweet via an GitHub Action.
+description: Action to send a tweet via a GitHub Action.
 inputs:
   message:
     description: 'message you want to tweet'
@@ -21,10 +21,10 @@ outputs:
   errorMessage:
     description: 'if something went wrong, the error message'
   sentMessage:
-    description: 'message sent to Twitter'
+    description: 'the message sent to Twitter'
 runs:
   using: docker
-  image: docker://ghcr.io/packtpublishing/tweeter:1.0.0
+  image: Dockerfile
   args:
     - --message
     - "${{ inputs.message }}"
